@@ -6,6 +6,7 @@ import {listsubject} from '../../assets/TaiNguyen/db/Subjects'
   styleUrls: ['./thi.component.css']
 })
 export class ThiComponent implements OnInit {
+  p : number;
   lists = [...listsubject];
   constructor() { }
 
