@@ -1,0 +1,16 @@
+<div id="List">
+    <h2>Choose test subject</h2>
+    <div class="row">
+        <div class="col-6 p-3" *ngFor='let subject of lists | paginate: { itemsPerPage: 4, currentPage: p }'>
+            <div class="card rounded" style="text-align: center">
+                <div class="card-body bg-light" style="border-bottom: 1px whitesmoke solid">
+                    <a class="card-title" routerLink='/Home'>{{subject.Name}}</a>
+                </div>
+                <img class="card-img-bottom" src="../../assets/TaiNguyen/images/logos/{{subject.Logo}}">
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center; font-size: 16px;">
+        <pagination-controls style="margin: 0 auto" (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>
