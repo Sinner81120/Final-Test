@@ -1,0 +1,23 @@
+#Register{
+    padding-top: 60px;
+    background-color:whitesmoke;
+    width: 70%;
+    margin: 0 auto;
+    padding-bottom: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+h2{ 
+  color: #6D7781;
+  font-family: 'Sofia', cursive;
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+input{
+    border-left: black solid;
+}
+div{
+    padding: 10px;
+}

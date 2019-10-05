@@ -18,7 +18,7 @@
                         thử</i></a>
             </li>
         </ul>
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto mr-4">
             <li class="nav-item ">
                 <a class="nav-link rounded-circle" href="#">
                     <i class="fas fa-search text-warning"></i>
@@ -29,8 +29,8 @@
                     <i class="fas fa-user-tie "></i> Tài khoản
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Đăng nhập</a>
-                    <a class="dropdown-item" href="#">Đăng kí</a>
+                    <a class="dropdown-item" routerLink="/Login">Đăng nhập</a>
+                    <a class="dropdown-item" routerLink="/Register">Đăng kí</a>
                 </div>
             </li>
         </ul>
@@ -73,11 +73,12 @@
             <span> <i class="fab fa-facebook-messenger"></i> Send your message </span> <br>
             <form>
                 <div class="form-group">
-                    <input type="email" class="form-control" id="sendmess" placeholder="Email">
+                    <input type="email" class="form-control" placeholder="Email"
+                        style=" background-color: black; color: orange">
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" rows="5" id="sendmess" name="text"
-                        placeholder="Your message ...."></textarea>
+                    <textarea class="form-control" rows="5" name="text" placeholder="Your message ...."
+                        style="background-color: black;color: orange"></textarea>
                 </div>
                 <button class="btn btn-warning">Send</button>
             </form>
