@@ -10,6 +10,7 @@ import { DangkiComponent } from './dangki/dangki.component';
 import { DangnhapComponent } from './dangnhap/dangnhap.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ThiComponent } from './thi/thi.component';
+import { DangthiComponent } from './dangthi/dangthi.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ThiComponent } from './thi/thi.component';
     DangkiComponent,
     DangnhapComponent,
     AboutusComponent,
-    ThiComponent
+    ThiComponent,
+    DangthiComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +30,7 @@ import { ThiComponent } from './thi/thi.component';
       { path: '', component: HomeComponent },
       { path: 'Home', component: HomeComponent },
       { path: 'About-us', component: AboutusComponent },
+      { path: 'Testing/:subjectId', component: DangthiComponent },
       { path: 'Test', component: ThiComponent },
       { path: 'Register', component: DangkiComponent },
       { path: 'Login', component: DangnhapComponent },

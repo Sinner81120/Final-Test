@@ -1,4 +1,4 @@
-﻿[
+﻿export const liststudent =[
     {
         "username": "teonv",
         "password": "iloveyou",

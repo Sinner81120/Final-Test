@@ -1,4 +1,4 @@
-[
+export const listquestion =[
     {
         "Id": 25106,
         "Text": "Có mấy loại Service?",
