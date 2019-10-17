@@ -3,13 +3,13 @@
     <form action="/action_page.php">
         <div class="row">
             <div class="col-12">
-                <input type="text" class="form-control" placeholder="Username...">
+                <input type="text" class="form-control" placeholder="Username..." [(ngModel)]='user' [ngModelOptions]="{standalone: true}">
             </div>
             <div class="col-12">
-                <input type="password" placeholder="Password..." class="form-control">
+                <input type="password" placeholder="Password..." class="form-control" [(ngModel)]='pass' [ngModelOptions]="{standalone: true}">
             </div>
         </div>
         <a routerLink='/ForgetPass'>Quên mật khẩu ??</a><br> <br>
-        <button class="btn btn-primary" routerLink="/Home" style="font-size: 18px;">Log in</button>
+        <button class="btn btn-primary" style="font-size: 18px;">Log in</button>
     </form>
 </div>
