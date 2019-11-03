@@ -9,6 +9,7 @@ import { AccountService } from './../account.service'
 export class DoimatkhauComponent implements OnInit {
   pass;
   passnew;
+  repassnew;
   constructor(private acc: AccountService) { }
 
   ngOnInit() {
