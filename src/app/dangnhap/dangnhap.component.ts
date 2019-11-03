@@ -26,5 +26,8 @@ export class DangnhapComponent implements OnInit {
         this.Account = this.Acc.account
       }
     }
+    if(this.x == 0){
+      alert('Sai tài khoản hoặc mật khẩu')
+    }
   }
 }

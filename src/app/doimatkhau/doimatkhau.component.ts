@@ -17,7 +17,19 @@ export class DoimatkhauComponent implements OnInit {
   }
   Accept() {
     if (this.pass == this.acc.account.password) {
-      this.acc.account.password == this.passnew;
+      if (this.passnew == this.repassnew) {
+        alert('Đổi mật khẩu thành công')
+        this.acc.account.password = this.passnew;
+        for (let i = 0; i < this.acc.listUser.length; ++i) {
+          if (this.acc.account.username == this.acc.listUser[i].username && this.acc.account.password == this.acc.listUser[i].password) {
+            this.acc.listUser[i] = this.acc.account
+          }
+        }
+        this.pass = this.passnew = this.repassnew = ''
+        console.log(this.acc.listUser)
+      }
+      else alert('Password mới không trùng khớp ')
     }
+    else alert('Password cũ không chính xác !')
   }
 }

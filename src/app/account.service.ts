@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Account } from './Account'
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class AccountService {
   url = '../../assets/TaiNguyen/db/Students.json';
   listUser: any;
-  account : any;
+  account: Account;
   constructor(private http: HttpClient) {
     this.getData().subscribe(data => {
       this.listUser = data
@@ -17,7 +18,7 @@ export class AccountService {
   getData() {
     return this.http.get(this.url)
   }
-  addToList(acc) {
+  addToList(acc : Account) {
     this.listUser.push(acc);
   }
 }

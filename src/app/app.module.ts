@@ -42,6 +42,7 @@ import { DoithongtinComponent } from './doithongtin/doithongtin.component';
       { path: 'About-us', component: AboutusComponent },
       { path: 'Testing/:subjectId', component: DangthiComponent },
       { path: 'Test', component: ThiComponent },
+      { path: 'ChangeInfo', component: DoithongtinComponent },
       { path: 'ChangePassword', component: DoimatkhauComponent },
       { path: 'ForgetPass', component: QuenpassComponent },
       { path: 'Register', component: DangkiComponent },

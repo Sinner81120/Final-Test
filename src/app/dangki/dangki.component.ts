@@ -23,6 +23,7 @@ export class DangkiComponent implements OnInit {
 
   }
   Register() {
+    alert('Đăng kí thành công')
     this.acc.addToList(this.account)
     console.log(this.acc.listUser)
   }
