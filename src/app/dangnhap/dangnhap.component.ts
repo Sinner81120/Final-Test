@@ -10,6 +10,7 @@ export class DangnhapComponent implements OnInit {
   x;
   user;
   pass;
+  Account;
   constructor(private Acc: AccountService) {
     console.log(this.Acc.listUser)
   }
@@ -22,6 +23,7 @@ export class DangnhapComponent implements OnInit {
       if (this.user == this.Acc.listUser[i].username && this.pass == this.Acc.listUser[i].password) {
         ++this.x;
         this.Acc.account = this.Acc.listUser[i]
+        this.Account = this.Acc.account
       }
     }
   }
