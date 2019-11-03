@@ -23,7 +23,7 @@ export class DoithongtinComponent implements OnInit {
   ngOnInit() {
     this.acc = this.Acc.account
   }
-  Accept(){
+  Accept() {
     for (let i = 0; i < this.Acc.listUser.length; ++i) {
       if (this.acc.username == this.Acc.listUser[i].username && this.acc.password == this.Acc.listUser[i].password) {
         this.Acc.listUser[i] = this.acc
