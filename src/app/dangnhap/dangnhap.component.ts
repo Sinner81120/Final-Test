@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { AccountService } from './../account.service';
 
 @Component({
   selector: 'app-dangnhap',
@@ -7,21 +7,22 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./dangnhap.component.css']
 })
 export class DangnhapComponent implements OnInit {
-  url = '../../assets/TaiNguyen/db/Students.json';
-  listUser : any;
+  x;
   user;
   pass;
-  constructor(private http : HttpClient) { 
-
+  constructor(private Acc: AccountService) {
+    console.log(this.Acc.listUser)
   }
 
   ngOnInit() {
-    this.getData().subscribe(data => {
-      this.listUser = data
-      console.log(this.listUser)
-    })
   }
-  getData(){
-    return this.http.get(this.url)
+  Check() {
+    this.x = 0;
+    for (let i = 0; i < this.Acc.listUser.length; ++i) {
+      if (this.user == this.Acc.listUser[i].username && this.pass == this.Acc.listUser[i].password) {
+        ++this.x;
+        this.Acc.account = this.Acc.listUser[i]
+      }
+    }
   }
 }

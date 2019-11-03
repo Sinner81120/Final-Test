@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from './../account.service'
 
 @Component({
   selector: 'app-dangki',
@@ -6,10 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dangki.component.css']
 })
 export class DangkiComponent implements OnInit {
-
-  constructor() { }
+  account = {
+    "username": "",
+    "password": "",
+    "fullname": "",
+    "email": "",
+    "gender": "",
+    "birthday": "",
+    "schoolfee": "0",
+    "marks": "0"
+  };
+  constructor(private acc: AccountService) { }
 
   ngOnInit() {
-  }
 
+  }
+  Register() {
+    this.acc.addToList(this.account)
+    console.log(this.acc.listUser)
+  }
 }

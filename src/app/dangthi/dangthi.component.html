@@ -1,1 +1,14 @@
-<p>dangthi works!</p>
+<div id="Answer">
+    <span><b> Câu {{p}}</b></span>
+    <div *ngFor="let question of lists | paginate: { itemsPerPage: 1, currentPage: p }">
+        <span>{{question.Text}}</span>
+        <div *ngFor='let answer of question.Answers'>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio">{{answer.Text}}
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+<pagination-controls class="pagination  justify-content-center" (pageChange)="p = $event"></pagination-controls>

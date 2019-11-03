@@ -15,6 +15,7 @@ import { ThiComponent } from './thi/thi.component';
 import { DangthiComponent } from './dangthi/dangthi.component';
 import { DoimatkhauComponent } from './doimatkhau/doimatkhau.component';
 import { QuenpassComponent } from './quenpass/quenpass.component';
+import { DoithongtinComponent } from './doithongtin/doithongtin.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { QuenpassComponent } from './quenpass/quenpass.component';
     ThiComponent,
     DangthiComponent,
     DoimatkhauComponent,
-    QuenpassComponent
+    QuenpassComponent,
+    DoithongtinComponent
   ],
   imports: [
     BrowserModule,

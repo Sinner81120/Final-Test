@@ -4,10 +4,10 @@
         <div class="row">
             <div class="col-12">
                 <label> Enter your email address or phone number </label>
-                    <input type="text" class="form-control">
+                <input type="text" class="form-control" [(ngModel)]='email' [ngModelOptions]="{standalone: true}">
 
             </div>
         </div>
-        <button class="btn btn-primary" routerLink="/Home" style="font-size: 18px;">Accept</button>
+        <button class="btn btn-primary" (click)='Pass()' style="font-size: 18px;">Accept</button>
     </form>
 </div>

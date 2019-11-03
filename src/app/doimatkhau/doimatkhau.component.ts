@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from './../account.service'
 
 @Component({
   selector: 'app-doimatkhau',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./doimatkhau.component.css']
 })
 export class DoimatkhauComponent implements OnInit {
-
-  constructor() { }
+  pass;
+  passnew;
+  constructor(private acc: AccountService) { }
 
   ngOnInit() {
+    console.log(this.acc.account)
   }
-
+  Accept() {
+    if (this.pass == this.acc.account.password) {
+      this.acc.account.password == this.passnew;
+    }
+  }
 }
