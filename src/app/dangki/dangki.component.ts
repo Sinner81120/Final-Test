@@ -8,14 +8,14 @@ import { AccountService } from './../account.service'
 })
 export class DangkiComponent implements OnInit {
   account = {
-    "username": "",
-    "password": "",
-    "fullname": "",
-    "email": "",
-    "gender": "",
-    "birthday": "",
-    "schoolfee": "0",
-    "marks": "0"
+    username: "",
+    password: "",
+    fullname: "",
+    email: "",
+    gender: "",
+    birthday: "",
+    schoolfee: 0,
+    marks: 0
   };
   constructor(private acc: AccountService) { }
 
