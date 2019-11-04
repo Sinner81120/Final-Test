@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CountdownModule } from 'ngx-countdown'
 //Firebase
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -43,6 +44,7 @@ import { DoithongtinComponent } from './doithongtin/doithongtin.component';
     AngularFirestoreModule, // Only required for database features
     AngularFireAuthModule, // Only required for auth features,
     AngularFireStorageModule, // Only required for storage features
+    CountdownModule,
     FormsModule,
     AppRoutingModule,
     NgxPaginationModule,

@@ -1,4 +1,8 @@
 <div id="Answer">
+    <div class="float-right">
+        <countdown #cd class="float-right" style="font-size: 20px;" config="{ leftTime : 5400, format : 'HH:mm:ss'}">
+        </countdown>
+    </div>
     <span><b> Câu {{p}}</b></span>
     <div *ngFor="let question of lists | paginate: { itemsPerPage: 1, currentPage: p }">
         <span>{{question.Text}}</span>
@@ -11,7 +15,7 @@
         </div>
     </div>
 </div>
-<div class=" pagination justify-content-center mb-4" >
+<div class=" pagination justify-content-center mb-4">
     <button class="btn btn-primary mr-1" (click)='First()'>First</button>
     <button class="btn btn-primary mr-1" (click)='Previous()'>Previous</button>
     <button class="btn btn-primary mr-1" (click)='Next()'>Next</button>
