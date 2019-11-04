@@ -4,6 +4,12 @@ import { RouterModule } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+//Firebase
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,6 +39,10 @@ import { DoithongtinComponent } from './doithongtin/doithongtin.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, 'final-test'),
+    AngularFirestoreModule, // Only required for database features
+    AngularFireAuthModule, // Only required for auth features,
+    AngularFireStorageModule, // Only required for storage features
     FormsModule,
     AppRoutingModule,
     NgxPaginationModule,

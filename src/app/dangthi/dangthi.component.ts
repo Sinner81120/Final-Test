@@ -25,4 +25,20 @@ export class DangthiComponent implements OnInit {
   GetData() {
     return this.http.get(this.url);
   }
+  Next() {
+    if (this.p < this.lists.length) {
+      ++this.p;
+    }
+  }
+  Previous() {
+    if (this.p > 1) {
+      --this.p;
+    }
+  }
+  First() {
+    this.p = 1;
+  }
+  Last() {
+    this.p = this.lists.length;
+  }
 }

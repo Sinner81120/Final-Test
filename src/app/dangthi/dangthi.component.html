@@ -11,4 +11,9 @@
         </div>
     </div>
 </div>
-<pagination-controls class="pagination  justify-content-center" (pageChange)="p = $event"></pagination-controls>
+<div class=" pagination justify-content-center mb-4" >
+    <button class="btn btn-primary mr-1" (click)='First()'>First</button>
+    <button class="btn btn-primary mr-1" (click)='Previous()'>Previous</button>
+    <button class="btn btn-primary mr-1" (click)='Next()'>Next</button>
+    <button class="btn btn-primary" (click)='Last()'>Last</button>
+</div>
