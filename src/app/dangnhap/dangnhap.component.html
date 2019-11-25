@@ -12,37 +12,6 @@
             </div>
         </div>
         <a routerLink='/ForgetPass'>Quên mật khẩu ??</a><br> <br>
-        <button class="btn btn-primary" style="font-size: 18px;" (click)='Check()' data-toggle="modal"
-            data-target="#myModal">Log in</button>
+        <button class="btn btn-primary" style="font-size: 18px;" (click)='Check()' >Log in</button>
     </form>
-</div>
-<div class="modal fade" id="myModal" *ngIf='x > 0'>
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Đăng nhập thành công</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <!-- Modal body -->
-            <div class="modal-body">
-                Thông tin tài khoản: <br>
-                Username : {{Account.username}} <br>
-                Password : {{Account.password}} <br>
-                Fullname: {{Account.fullname}} <br>
-                Email: {{Account.email}} <br>
-                Gender: {{Account.gender}} <br>
-                Birthday: {{Account.birthday}} <br>
-                Schoolfee: {{Account.schoolfee}} <br>
-                Marks: {{Account.marks}} <br>
-            </div>
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-dismiss="modal" routerLink="/ChangePassword">Đổi
-                    mật khẩu</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal" routerLink="/ChangeInfo">Sửa thông tin</button>
-            </div>
-
-        </div>
-    </div>
 </div>

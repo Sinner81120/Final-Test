@@ -8,17 +8,22 @@ import { Account } from './Account'
 export class AccountService {
   url = '../../assets/TaiNguyen/db/Students.json';
   listUser: any;
-  account: Account;
+  Count = {
+    right : 0,
+    wrong : 0,
+    maxpoint : 0,
+    yourpoint : 0,
+  }
+  account: Account = null;
   constructor(private http: HttpClient) {
     this.getData().subscribe(data => {
       this.listUser = data
-      console.log(this.listUser)
     })
   }
   getData() {
     return this.http.get(this.url)
   }
-  addToList(acc : Account) {
+  addToList(acc: Account) {
     this.listUser.push(acc);
   }
 }

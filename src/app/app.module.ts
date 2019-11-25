@@ -23,6 +23,8 @@ import { DangthiComponent } from './dangthi/dangthi.component';
 import { DoimatkhauComponent } from './doimatkhau/doimatkhau.component';
 import { QuenpassComponent } from './quenpass/quenpass.component';
 import { DoithongtinComponent } from './doithongtin/doithongtin.component';
+import { KetquaComponent } from './ketqua/ketqua.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { DoithongtinComponent } from './doithongtin/doithongtin.component';
     DangthiComponent,
     DoimatkhauComponent,
     QuenpassComponent,
-    DoithongtinComponent
+    DoithongtinComponent,
+    KetquaComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +54,7 @@ import { DoithongtinComponent } from './doithongtin/doithongtin.component';
     NgxPaginationModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
+      { path: 'User', component: UserComponent },
       { path: 'Home', component: HomeComponent },
       { path: 'About-us', component: AboutusComponent },
       { path: 'Testing/:subjectId', component: DangthiComponent },

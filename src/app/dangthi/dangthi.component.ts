@@ -1,16 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router'
+import { AccountService } from './../account.service'
 @Component({
   selector: 'app-dangthi',
   templateUrl: './dangthi.component.html',
   styleUrls: ['./dangthi.component.css']
 })
+
 export class DangthiComponent implements OnInit {
   p = 1;
   url = '';
   lists: any;
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+  config = {
+    leftTime: 5400
+  }
+  account;
+
+  right;
+  wrong;
+  maxpoint;
+  yourpoint;
+
+  check = [];
+  constructor(
+    private route: ActivatedRoute,
+    private http: HttpClient,
+    private router: Router,
+    private Acc: AccountService) {
+    this.account = this.Acc.account
+  }
 
   ngOnInit() {
     this.route.paramMap.subscribe(para => {
@@ -18,8 +38,11 @@ export class DangthiComponent implements OnInit {
     })
     this.GetData().subscribe(data => {
       this.lists = data;
-      console.log(this.lists)
     })
+    if (this.account === null) {
+      alert('Đăng nhập để có thể làm bài test');
+      this.router.navigate(['/Login'])
+    }
   }
 
   GetData() {
@@ -40,5 +63,23 @@ export class DangthiComponent implements OnInit {
   }
   Last() {
     this.p = this.lists.length;
+  }
+  Finish() {
+    this.yourpoint = 0;
+    this.maxpoint = 0;
+    this.right = 0;
+    for (let i = 0; i < this.lists.length; ++i) {
+      this.maxpoint += this.lists[i].Marks
+      if (this.lists[i].AnswerId == this.check[i]) {
+        this.yourpoint += this.lists[i].Marks
+        this.right++;
+      }
+    }
+    this.wrong = this.lists.length - this.right
+    this.Acc.Count.wrong = this.wrong
+    this.Acc.Count.maxpoint = this.maxpoint
+    this.Acc.Count.right = this.right
+    this.Acc.Count.yourpoint = this.yourpoint
+    console.log(this.Acc.Count)
   }
 }

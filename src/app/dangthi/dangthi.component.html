@@ -1,7 +1,8 @@
 <div id="Answer">
     <div class="float-right">
-        <countdown #cd class="float-right" style="font-size: 20px;" config="{ leftTime : 5400, format : 'HH:mm:ss'}">
-        </countdown>
+        <countdown #cd [config]="config"></countdown> <br>
+        <button class="btn btn-outline-primary" (click)="Finish()">Chấm điểm</button>
+        
     </div>
     <span><b> Câu {{p}}</b></span>
     <div *ngFor="let question of lists | paginate: { itemsPerPage: 1, currentPage: p }">
@@ -9,15 +10,15 @@
         <div *ngFor='let answer of question.Answers'>
             <div class="form-check">
                 <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="optradio">{{answer.Text}}
+                    <input type="radio" class="form-check-input" name="optradio" [(ngModel)]='check[p-1]' value="{{answer.Id}}">{{answer.Text}}
                 </label>
             </div>
         </div>
     </div>
 </div>
 <div class=" pagination justify-content-center mb-4">
-    <button class="btn btn-primary mr-1" (click)='First()'>First</button>
-    <button class="btn btn-primary mr-1" (click)='Previous()'>Previous</button>
-    <button class="btn btn-primary mr-1" (click)='Next()'>Next</button>
-    <button class="btn btn-primary" (click)='Last()'>Last</button>
+    <button class="btn btn-success mr-1" (click)='First()'>First</button>
+    <button class="btn btn-success mr-1" (click)='Previous()'>Previous</button>
+    <button class="btn btn-success mr-1" (click)='Next()'>Next</button>
+    <button class="btn btn-success" (click)='Last()'>Last</button>
 </div>

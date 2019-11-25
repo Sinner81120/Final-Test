@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from './../account.service';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-dangnhap',
@@ -11,8 +12,7 @@ export class DangnhapComponent implements OnInit {
   user;
   pass;
   Account;
-  constructor(private Acc: AccountService) {
-    console.log(this.Acc.listUser)
+  constructor(private Acc: AccountService, private router : Router) {
   }
 
   ngOnInit() {
@@ -24,9 +24,10 @@ export class DangnhapComponent implements OnInit {
         ++this.x;
         this.Acc.account = this.Acc.listUser[i]
         this.Account = this.Acc.account
+        this.router.navigate(['/User'])
       }
     }
-    if(this.x == 0){
+    if (this.x == 0) {
       alert('Sai tài khoản hoặc mật khẩu')
     }
   }

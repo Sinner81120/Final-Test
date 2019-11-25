@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from './../account.service'
+import { Router} from '@angular/router'
 
 @Component({
   selector: 'app-doimatkhau',
@@ -10,10 +11,9 @@ export class DoimatkhauComponent implements OnInit {
   pass;
   passnew;
   repassnew;
-  constructor(private acc: AccountService) { }
+  constructor(private acc: AccountService, private router : Router) { }
 
   ngOnInit() {
-    console.log(this.acc.account)
   }
   Accept() {
     if (this.pass == this.acc.account.password) {
@@ -25,8 +25,7 @@ export class DoimatkhauComponent implements OnInit {
             this.acc.listUser[i] = this.acc.account
           }
         }
-        this.pass = this.passnew = this.repassnew = ''
-        console.log(this.acc.listUser)
+        this.router.navigate(['/User']);
       }
       else alert('Password mới không trùng khớp ')
     }

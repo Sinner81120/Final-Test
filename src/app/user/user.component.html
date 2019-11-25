@@ -1,0 +1,23 @@
+<div *ngIf='account === null' id="NoLg">
+    Bạn vẫn chưa đăng nhập <br>
+    <button class="btn btn-primary mr-2" routerLink="/Register">Đăng kí</button>
+    <button class="btn btn-primary" routerLink="/Login">Đăng nhập</button>
+</div>
+<div *ngIf='account != null' class="row">
+    <div class="col-4">
+        <br>
+        <button class="btn btn-success" routerLink='/ChangeInfo'>Sửa thông tin</button> <br> <br>
+        <button class="btn btn-success" routerLink='/ChangePassword'>Đổi mật khẩu</button> <br> <br>
+        <button class="btn btn-danger" (click)="Logout()">Đăng xuẩt</button> <br>
+    </div>
+    <div class="col-8">
+        <h1>Thông tin tài khoản: </h1>
+        <span><b>Username :</b></span> {{account.username}} <br>
+        <span><b>Fullname :</b></span> {{account.fullname}} <br>
+        <span><b>Email :</b></span> {{account.email}} <br>
+        <span><b>Gender :</b></span> {{account.gender}} <br>
+        <span><b>Birthday :</b></span> {{account.birthday}} <br>
+        <span><b>Schoolfee :</b></span> {{account.schoolfee}} <br>
+        <span><b>Marks : </b></span> {{account.marks}} <br>
+    </div>
+</div>
