@@ -55,6 +55,7 @@ import { UserComponent } from './user/user.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'User', component: UserComponent },
+      { path: 'Result', component: KetquaComponent },
       { path: 'Home', component: HomeComponent },
       { path: 'About-us', component: AboutusComponent },
       { path: 'Testing/:subjectId', component: DangthiComponent },

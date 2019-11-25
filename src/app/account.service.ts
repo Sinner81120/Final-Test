@@ -13,6 +13,7 @@ export class AccountService {
     wrong : 0,
     maxpoint : 0,
     yourpoint : 0,
+    subject : '',
   }
   account: Account = null;
   constructor(private http: HttpClient) {

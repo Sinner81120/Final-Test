@@ -22,6 +22,7 @@ export class DangthiComponent implements OnInit {
   wrong;
   maxpoint;
   yourpoint;
+  subject;
 
   check = [];
   constructor(
@@ -35,6 +36,7 @@ export class DangthiComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(para => {
       this.url = '../../assets/TaiNguyen/db/Quizs/' + para.get('subjectId') + '.json';
+      this.subject = para.get('subjectId')
     })
     this.GetData().subscribe(data => {
       this.lists = data;
@@ -80,6 +82,8 @@ export class DangthiComponent implements OnInit {
     this.Acc.Count.maxpoint = this.maxpoint
     this.Acc.Count.right = this.right
     this.Acc.Count.yourpoint = this.yourpoint
-    console.log(this.Acc.Count)
+    this.Acc.account.marks = this.yourpoint
+    this.Acc.Count.subject = this.subject
+    this.router.navigate(['/Result'])
   }
 }

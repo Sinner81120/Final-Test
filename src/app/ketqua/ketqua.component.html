@@ -1,1 +1,33 @@
-<p>ketqua works!</p>
+<h2>Result</h2>
+<div class="row mb-4">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <b style="font-size: 40px;
+        font-family :'Times New Roman', Times, serif;">Kết quả môn {{Count.subject}} </b> <br>
+        Số câu đúng : {{Count.right}}/{{Count.right + Count.wrong}} <br>
+        Số câu sai : {{Count.wrong}}/{{Count.right + Count.wrong}} <br>
+        Điểm số : {{Count.yourpoint}}/{{Count.maxpoint}} <br>
+        <div class="alert alert-warning" *ngIf='PercentPoint < 0.7 && PercentPoint >= 0.5'>
+            Bạn đã đủ điểm để qua môn ! <br>
+            Hãy cố gắng hơn để đạt được điểm số cao hơn nhé !
+        </div>
+        <div class="alert alert-danger" *ngIf='PercentPoint < 0.5'>
+            Điểm số có vẻ không được tốt cho lắm <br>
+            Hãy ôn luyện thật kĩ để đạt được điểm số cao hơn bạn nhé !
+        </div>
+        <div class="alert alert-primary" *ngIf='PercentPoint >= 0.7 && PercentPoint < 0.9'>
+            Bạn đã có được gần như là đầy đủ kiến thức về môn này rồi <br>
+            Hãy cố gắng hơn để nắm vững hoàn toàn về nó nhé ^^
+        </div>
+        <div class="alert alert-success" *ngIf='PercentPoint >= 0.9'>
+            Thật tuyệt vời !! <br>
+            Bạn đã nắm được hầu  hết kiến thức về môn này rồi <br>
+            Bạn thật tuyệt vời :*
+        </div> <br>
+        <button class="btn btn-primary mr-2" routerLink="/Home">Trang chủ</button>
+        <button class="btn btn-outline-primary mr-2" routerLink="/User" >Thông tin cá nhân</button>
+        <button class="btn btn-success  mr-2" routerLink="/Test">Chọn môn thi khác</button>
+    </div>
+    <div class="col-3"></div>
+
+</div>
